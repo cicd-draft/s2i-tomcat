@@ -2,8 +2,8 @@ FROM openshift/base-centos7
 
 EXPOSE 8080
 
-ENV TOMCAT_VERSION=8.5.24 \
-    MAVEN_VERSION=3.5.2
+ENV TOMCAT_VERSION=8.5.34 \
+    MAVEN_VERSION=3.5.4
 
 LABEL io.k8s.description="Platform for building and running JEE applications on Tomcat" \
       io.k8s.display-name="Tomcat Builder" \
