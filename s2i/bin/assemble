@@ -26,8 +26,11 @@ echo $a
 echo "**********"
 b=`ls /opt/s2i/destination/`
 echo $b
+echo "------***"
+c=`ls /opt/s2i/destination/src`
+echo $c
 
-cp -R /opt/s2i/destination ./
+cp -R /opt/s2i/destination/src/.  ./
 
 
 echo "---> Building application from source..."
