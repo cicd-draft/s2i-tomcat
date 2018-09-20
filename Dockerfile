@@ -32,8 +32,8 @@ RUN INSTALL_PKGS="tar java-1.8.0-openjdk java-1.8.0-openjdk-devel" && \
 #ADD ./contrib/settings.xml $HOME/.m2/
 
 # Copy the S2I scripts from the specific language image to $STI_SCRIPTS_PATH
-COPY ./s2i/bin/ $STI_SCRIPTS_PATH
-#COPY ./s2i/bin/ /usr/libexec/s2i
+#COPY ./s2i/bin/ $STI_SCRIPTS_PATH
+COPY ./s2i/bin/ /usr/libexec/s2i
 
 RUN chmod -R a+rw /tomcat && \
     chmod a+rwx /tomcat/* && \
