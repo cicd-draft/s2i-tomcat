@@ -21,7 +21,14 @@ fi
 
 echo "---> Installing application source..."
 #cp -Rf /tmp/src/. ./
+a=`ls /tmp/`
+echo $a
+echo "**********"
+b=`ls /opt/s2i/destination/`
+echo $b
+
 cp -R /opt/s2i/destination ./
+
 
 echo "---> Building application from source..."
 # TODO: Add build steps for your application, eg npm install, bundle install, pip install, etc.
