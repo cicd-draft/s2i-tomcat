@@ -28,7 +28,8 @@ RUN INSTALL_PKGS="tar java-1.8.0-openjdk java-1.8.0-openjdk-devel" && \
     rm -rf /tomcat/webapps/* && \
     mkdir -p /opt/s2i/destination && \
     mkdir /tmp/src && \
-    mkdir -p /opt/maven/repository
+    mkdir -p /opt/maven/repository/ && \
+    chmod 777 /opt/maven/repository
 
 # Add s2i customizations
 ADD ./settings.xml $HOME/.m2/
