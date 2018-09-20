@@ -4,7 +4,7 @@ EXPOSE 8080
 
 ENV TOMCAT_VERSION=8.5.34 \
     MAVEN_VERSION=3.5.4 \
-    STI_SCRIPTS_PATH=/usr/libexec/s2i/
+    STI_SCRIPTS_PATH=/usr/libexec/s2i/ 
 
 LABEL io.k8s.description="Platform for building and running JEE applications on Tomcat" \
       io.k8s.display-name="Tomcat Builder" \
@@ -30,7 +30,7 @@ RUN INSTALL_PKGS="tar java-1.8.0-openjdk java-1.8.0-openjdk-devel" && \
     mkdir /tmp/src
 
 # Add s2i customizations
-#ADD ./contrib/settings.xml $HOME/.m2/
+ADD ./settings.xml $HOME/.m2/
 
 # Copy the S2I scripts from the specific language image to $STI_SCRIPTS_PATH
 #COPY ./s2i/bin/ $STI_SCRIPTS_PATH
@@ -39,7 +39,7 @@ COPY ./s2i/bin/ /usr/libexec/s2i
 RUN chmod -R a+rw /tomcat && \
     chmod a+rwx /tomcat/* && \
     chmod +x /tomcat/bin/*.sh && \
-#    chmod -R a+rw $HOME && \
+    chmod -R a+rw $HOME && \
     chmod -R +x $STI_SCRIPTS_PATH && \
     chmod -R g+rw /opt/s2i/destination
 
