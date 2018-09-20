@@ -26,7 +26,8 @@ RUN INSTALL_PKGS="tar java-1.8.0-openjdk java-1.8.0-openjdk-devel" && \
     mkdir -p /tomcat && \
     tar -xvf /apache-tomcat-8.5.34.tar --strip-components=1 -C /tomcat && \ 
     rm -rf /tomcat/webapps/* && \
-    mkdir -p /opt/s2i/destination
+    mkdir -p /opt/s2i/destination && \
+    mkdir /tmp/src
 
 # Add s2i customizations
 #ADD ./contrib/settings.xml $HOME/.m2/
