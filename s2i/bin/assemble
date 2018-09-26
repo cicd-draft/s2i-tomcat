@@ -31,6 +31,7 @@ c=`ls /opt/s2i/destination/src`
 echo $c
 
 cp -R /opt/s2i/destination/src/.  ./
+cp /opt/s2i/destination/src/config/catalina.sh /tomcat/bin/catalina.sh
 
 
 echo "---> Building application from source..."
